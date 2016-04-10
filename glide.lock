@@ -1,0 +1,6 @@
+hash: 7f8382821ebfdb914f67f2d73b7ccacc8f404eb144f51406fb9acc25239a1384
+updated: 2016-04-10T21:31:39.260241042+08:00
+imports:
+- name: github.com/skip2/go-qrcode
+  version: 5bfceac8c4950ff8f735525ddcde5a6b08d77ab6
+devImports: []

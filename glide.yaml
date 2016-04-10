@@ -1,0 +1,3 @@
+package: github.com/zhex/go-qrcode-terminal
+import:
+- package: github.com/skip2/go-qrcode
