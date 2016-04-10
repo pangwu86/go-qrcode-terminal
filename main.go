@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	qrcode "github.com/skip2/go-qrcode"
+	"os"
 )
 
 const (
@@ -20,10 +21,26 @@ func stripBorder(bitmap [][]bool, borderWidth int) [][]bool {
 	return m
 }
 
+func printHelp() {
+	help := `
+USAGE: qr [message]
+
+Example:
+qr http://www.zhex.me`
+
+	fmt.Println(help)
+}
+
 func main() {
-	q, err := qrcode.New("http://www.baidu.com", qrcode.Medium)
+	if len(os.Args) < 2 {
+		printHelp()
+		os.Exit(0)
+	}
+
+	q, err := qrcode.New(os.Args[1], qrcode.Medium)
 	if err != nil {
-		fmt.Print(err)
+		fmt.Print("Ops, something wrong with the message, qrcode can not be generated.")
+		os.Exit(0)
 	}
 
 	out := ""
